@@ -10,37 +10,40 @@
 
 		  $scope.recipes = $firebaseArray(ref);
 			$scope.edit = false;
-			$scope.welcome = false;
+			$scope.welcome = true;
 			$scope.showView = false;
 			$scope.showAdd = false;
 
 			$scope.start = function() {
 				$scope.edit = false;
-				$scope.welcome = true;
+				$scope.welcome = false;
 				$scope.showView = true;
 				$scope.showAdd = false;
 		  };
 
 			$scope.add = function() {
 				$scope.edit = false;
-				$scope.welcome = true;
+				$scope.welcome = false;
 				$scope.showView = false;
 				$scope.showAdd = true;
 		  };
 
 			$scope.view = function() {
 				$scope.edit = false;
-				$scope.welcome = true;
+				$scope.welcome = false;
 				$scope.showView = true;
 				$scope.showAdd = false;
 		  };
 
 			$scope.unstart = function() {
-		    $scope.welcome = false;
+		    $scope.welcome = true;
 				$scope.newRecipeClass = '';
 				$scope.newRecipeName = '';
 				$scope.newRecipeText = '';
 				$scope.edit = false;
+				$scope.welcome = true;
+				$scope.showView = false;
+				$scope.showAdd = false;
 		  };
 
 		  $scope.addRecipe = function() {

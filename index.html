@@ -14,20 +14,20 @@
 			 <div class="row">
 				 <a ng-click="unstart()" href="" id="banner">Kitchen Chef</a>
 					 <ul class="right hide-on-med-and-down text">
-						   <li><a href="" ng-click="view()">View</a></li>
-							 <li><a href="" ng-click="add()">Add</a></li>
+						   <li><a href="" ng-click="view()">View Recipes</a></li>
+							 <li><a href="" ng-click="add()">Add Recipes</a></li>
 					 </ul>
 					 <ul id="nav-mobile" class="side-nav text">
-						 <li><a href="">View</a></li>
-						 <li><a href="">Add</a></li>
+						 <li><a href="" ng-click="view()">View</a></li>
+						 <li><a href="" ng-click="add()">Add</a></li>
 					 </ul>
-		 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+		 <a href="" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 			 </div>
 			</nav>
 		</div>
 
 		<div class="container">
-				<div ng-show="welcome" class="row">
+				<div class="row">
 					<div class="col s6 white-text" id="add" ng-show="showAdd">
 						<form>
 							<input ng-model="newRecipeName" /><label>Recipe Name</label>
@@ -41,7 +41,7 @@
 						<ul>
 							<span class="text big">Recipes</span>
 							<li ng-repeat="recipe in recipes" class="white-text">
-									<p class="text_s">Recipe Name: {{recipe.name}}<br/>Classification: {{recipe.class}}<br/>Procedure: {{recipe.text}}<br/></p>
+									<p class="text_s">Recipe Name: {{recipe.name}}<br/>Classification: {{recipe.class}}<br/><br/>Procedure:<br/>{{recipe.text}}</p>
 									<button ng-click="showEdit(recipe)" class="button_s btn black">Edit</button>
 									<button ng-click="removeRecipe(recipe)" class="button_s btn black">Delete</button>
 							</li>
@@ -58,8 +58,8 @@
 		</div>
 
 		<div id="wrapper">
-			<div ng-hide="welcome">
-						<a ng-click="start()" class="button btn-large black">Start</a>
+			<div ng-show="welcome">
+						<a ng-click="start()" class="button btn black">Unlock the Secrets</a>
 			</div>
 		</div>
 
