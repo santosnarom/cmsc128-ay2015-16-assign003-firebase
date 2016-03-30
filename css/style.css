@@ -2,7 +2,8 @@
 .default_color_text{color: black !important}
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; 
 }
 
 #wrapper {
@@ -14,9 +15,52 @@ body {
   align-items: center;
 }
 
+#add {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#view {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.text {
+  color: white;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 100;
+  padding: 1;
+  letter-spacing: 5px;
+}
+
+.text_s {
+  color: white;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 100;
+  padding: 1;
+  letter-spacing: 3px;
+}
+
+.big {
+  font-size: 3rem;
+}
+
 .button {
   color: white;
   font-size: 2rem;
+  font-style: normal;
+  font-weight: 100;
+  padding: 1;
+  letter-spacing: 5px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.button_s {
+  color: white;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 100;
   padding: 1;

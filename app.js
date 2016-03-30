@@ -11,9 +11,28 @@
 		  $scope.recipes = $firebaseArray(ref);
 			$scope.edit = false;
 			$scope.welcome = false;
+			$scope.showView = false;
+			$scope.showAdd = false;
 
 			$scope.start = function() {
-		    $scope.welcome = true;
+				$scope.edit = false;
+				$scope.welcome = true;
+				$scope.showView = true;
+				$scope.showAdd = false;
+		  };
+
+			$scope.add = function() {
+				$scope.edit = false;
+				$scope.welcome = true;
+				$scope.showView = false;
+				$scope.showAdd = true;
+		  };
+
+			$scope.view = function() {
+				$scope.edit = false;
+				$scope.welcome = true;
+				$scope.showView = true;
+				$scope.showAdd = false;
 		  };
 
 			$scope.unstart = function() {
@@ -52,6 +71,9 @@
 				$scope.editRecipeName = obj.name;
 				$scope.editRecipeClass = obj.class;
 				$scope.editRecipeText = obj.text;
+				$scope.welcome = false;
+				$scope.showView = true;
+				$scope.showAdd = false;
 
 		  };
 

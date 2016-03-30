@@ -13,37 +13,44 @@
 			<nav id="navbar" class="black">
 			 <div class="row">
 				 <a ng-click="unstart()" href="" id="banner">Kitchen Chef</a>
+					 <ul class="right hide-on-med-and-down text">
+						   <li><a href="" ng-click="view()">View</a></li>
+							 <li><a href="" ng-click="add()">Add</a></li>
+					 </ul>
+					 <ul id="nav-mobile" class="side-nav text">
+						 <li><a href="">View</a></li>
+						 <li><a href="">Add</a></li>
+					 </ul>
+		 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 			 </div>
 			</nav>
 		</div>
 
 		<div class="container">
-				<div ng-show="welcome" class="center row">
-
-					<div class="col s3white-text">
+				<div ng-show="welcome" class="row">
+					<div class="col s6 white-text" id="add" ng-show="showAdd">
 						<form>
-							<label>Recipe Name</label><input ng-model="newRecipeName" />
-							<label>Classification</label><input ng-model="newRecipeClass" />
-							<label>Recipe</label><input ng-model="newRecipeText" />
+							<input ng-model="newRecipeName" /><label>Recipe Name</label>
+							<input ng-model="newRecipeClass" />	<label>Classification</label>
+							<input ng-model="newRecipeText" /><label>Recipe</label>
 							<button ng-click="addRecipe()" class="button btn-large black">Add Recipe</button>
 					</form>
 					</div>
 
-					<div>
+					<div ng-show="showView" id="view">
 						<ul>
+							<span class="text big">Recipes</span>
 							<li ng-repeat="recipe in recipes" class="white-text">
-									<h3>{{recipe.name}}</h3>
-									<h5>{{recipe.class}}</h5>
-									<p>{{recipe.text}}</p>
-									<button ng-click="showEdit(recipe)" class="button btn-medium black">Edit</button>
-									<button ng-click="removeRecipe(recipe)" class="button btn-small black">Delete</button>
+									<p class="text_s">Recipe Name: {{recipe.name}}<br/>Classification: {{recipe.class}}<br/>Procedure: {{recipe.text}}<br/></p>
+									<button ng-click="showEdit(recipe)" class="button_s btn black">Edit</button>
+									<button ng-click="removeRecipe(recipe)" class="button_s btn black">Delete</button>
 							</li>
 						</ul>
-						<div ng-show="edit" class="white-text">
+						<div ng-show="edit" class="col s6 white-text">
 								<input ng-model="editRecipeName" />
 								<input ng-model="editRecipeClass" />
 								<input ng-model="editRecipeText" />
-								<button ng-click="editRecipe()" class="button btn-large black" >Edit Recipe</button>
+								<button ng-click="editRecipe()" class="button_s btn black" >Edit Recipe</button>
 						</div>
 					</div>
 
