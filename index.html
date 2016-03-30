@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="kitchenApp">
 	<head>
+		<title>Kitchen Chef</title>
 		<script src="js/angular.min.js"></script>
 		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 		<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
@@ -21,23 +22,25 @@
 						 <li><a href="" ng-click="view()">View</a></li>
 						 <li><a href="" ng-click="add()">Add</a></li>
 					 </ul>
-		 <a href="" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+		 		 <a href="" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 			 </div>
 			</nav>
 		</div>
 
 		<div class="container">
+
 				<div class="row">
 					<div class="col s6 white-text" id="add" ng-show="showAdd">
 						<form>
 							<input ng-model="newRecipeName" /><label>Recipe Name</label>
 							<input ng-model="newRecipeClass" />	<label>Classification</label>
 							<input ng-model="newRecipeText" /><label>Recipe</label>
-							<button ng-click="addRecipe()" class="button btn-large black">Add Recipe</button>
+							<button ng-click="addRecipe()" class="button_b btn-large black">Add Recipe</button>
 					</form>
 					</div>
 
 					<div ng-show="showView" id="view">
+
 						<ul>
 							<span class="text big">Recipes</span>
 							<li ng-repeat="recipe in recipes" class="white-text">
@@ -46,12 +49,14 @@
 									<button ng-click="removeRecipe(recipe)" class="button_s btn black">Delete</button>
 							</li>
 						</ul>
+
 						<div ng-show="edit" class="col s6 white-text">
 								<input ng-model="editRecipeName" />
 								<input ng-model="editRecipeClass" />
 								<input ng-model="editRecipeText" />
 								<button ng-click="editRecipe()" class="button_s btn black" >Edit Recipe</button>
 						</div>
+
 					</div>
 
 				</div>
