@@ -3,8 +3,8 @@
 	<head>
 		<title>Kitchen Chef</title>
 		<script src="js/angular.min.js"></script>
-		<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-		<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+		<script src="js/firebase.js"></script>
+		<script src="js/angularfire.min.js"></script>
 		<link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 	</head>
@@ -33,8 +33,9 @@
 					<div class="col s6 white-text" id="add" ng-show="showAdd">
 						<form>
 							<input ng-model="newRecipeName" /><label>Recipe Name</label>
-							<input ng-model="newRecipeClass" />	<label>Classification</label>
-							<input ng-model="newRecipeText" /><label>Recipe</label>
+							<input ng-model="newRecipeClass" /><label>Classification</label>
+							<textarea id="textarea1" ng-model="newRecipeText" class="materialize-textarea"></textarea>
+							<label for="textarea1">Recipe</label>
 							<button ng-click="addRecipe()" class="button_b btn-large black">Add Recipe</button>
 					</form>
 					</div>
@@ -51,10 +52,11 @@
 						</ul>
 
 						<div ng-show="edit" class="col s6 white-text">
-								<input ng-model="editRecipeName" />
-								<input ng-model="editRecipeClass" />
-								<input ng-model="editRecipeText" />
-								<button ng-click="editRecipe()" class="button_s btn black" >Edit Recipe</button>
+								<input ng-model="editRecipeName" /><label>Recipe Name</label>
+								<input ng-model="editRecipeClass" /><label>Classification</label>
+								<textarea id="textarea2" ng-model="editRecipeText" class="materialize-textarea"></textarea>
+								<label for="textarea2">Recipe</label>
+								<button ng-click="editRecipe()" class="button_b btn black" >Edit Recipe</button>
 						</div>
 
 					</div>
