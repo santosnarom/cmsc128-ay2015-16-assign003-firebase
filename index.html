@@ -44,14 +44,14 @@
 
 						<ul>
 							<span class="text big">Recipes</span>
-							<li ng-repeat="recipe in recipes" class="white-text">
+							<li ng-repeat="recipe in recipes" class="white-text bot">
 									<p class="text_s">Recipe Name: {{recipe.name}}<br/>Classification: {{recipe.class}}<br/><br/>Procedure:<br/>{{recipe.text}}</p>
-									<button ng-click="showEdit(recipe)" class="button_s btn black">Edit</button>
+									<a ng-click="showEdit(recipe)" class="button_s btn black" href="#edit">Edit</a>
 									<button ng-click="removeRecipe(recipe)" class="button_s btn black">Delete</button>
 							</li>
 						</ul>
 
-						<div ng-show="edit" class="col s6 white-text">
+						<div ng-show="edit" class="col s6 white-text" id="edit">
 								<input ng-model="editRecipeName" /><label>Recipe Name</label>
 								<input ng-model="editRecipeClass" /><label>Classification</label>
 								<textarea id="textarea2" ng-model="editRecipeText" class="materialize-textarea"></textarea>
