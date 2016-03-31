@@ -57,11 +57,12 @@
 					$scope.newRecipeText = '';
 				});
 
-				if(ref){
-					$scope.newRecipeClass = '';
-					$scope.newRecipeName = '';
-					$scope.newRecipeText = '';
-				}
+				//offline
+				// if(ref){
+				// 	$scope.newRecipeClass = '';
+				// 	$scope.newRecipeName = '';
+				// 	$scope.newRecipeText = '';
+				// }
 		  };
 
 			$scope.removeRecipe = function(obj) {
@@ -85,12 +86,13 @@
 				$scope.editRecipeObj.class = $scope.editRecipeClass;
 				$scope.editRecipeObj.text = $scope.editRecipeText;
 
-				if(ref){
-					$scope.editRecipeClass = '';
-					$scope.editRecipeName = '';
-					$scope.editRecipeText = '';
-					$scope.edit = false;
-				}
+				//offline
+				// if(ref){
+				// 	$scope.editRecipeClass = '';
+				// 	$scope.editRecipeName = '';
+				// 	$scope.editRecipeText = '';
+				// 	$scope.edit = false;
+				// }
 
 		    $scope.recipes.$save($scope.editRecipeObj).then(function(){
 					$scope.editRecipeClass = '';
